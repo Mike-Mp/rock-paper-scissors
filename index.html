@@ -4,70 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet"> 
+    <title>Rock-Paper-Scissors(Mike-Mp)</title>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="by"><h1>Made by <a href="https://github.com/Mike-Mp">Mike-Mp</a></h1></div>
+        <a href="https://github.com/Mike-Mp"><img src="images/github_logo.png" id="github-logo"></a>
+    </div>
+
+    <div class="container">
+        <div class="title">
+            <p>Rock, Paper, Scissors game. <a href="https://www.theodinproject.com/courses/web-development-101/lessons/rock-paper-scissors">A TOP project.</a></p>
+        </div>
+            <div class="scores">
+                <p id="player-score">3</p>
+                <p id="comp-score">4</p>
+                <p id="ties">6</p>
+            </div>
+        <div class="pics">
+            <img src="" alt="" id="playerChoice">
+            <img src="" alt="" id="compChoice">
+        </div>
+        <div class="buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <p id="winner"></p>
+    </div>
     
-
-    <script>
-        let playerScore = 0;
-        let computerScore = 0;
-        let choices = ['rock', 'paper', 'scissors'];
-
-        game();
-
-        function computerPlay() {
-            let random = Math.floor(Math.random() * 2 + 1);
-            let compChoice = choices[random];
-            return compChoice;
-        }
-
-        function game() {
-            while (playerScore < 5 && computerScore < 5) {
-                let playerSelection = prompt('rock, paper or scissors?');
-                let computerSelection = computerPlay();
-                playerSelection = playerSelection.toUpperCase();
-                computerSelection = computerSelection.toUpperCase();
-                console.log(round(playerSelection, computerSelection));
-            }
-            winner();
-        }
-
-        function round(playerSelection, computerSelection) {
-            if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS') {
-                playerScore += 1;
-                console.log('Rock beats scissors! Player wins round.')
-            } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK') {
-                playerScore += 1;
-                console.log("Paper beats rock! Player wins round.");
-            } else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER') {
-                playerScore += 1;
-                console.log("Scissors beats paper! Player wins round.");
-            } else if (playerSelection == 'ROCK' && computerSelection == 'ROCK') {
-                console.log("Tie! Try again");
-            } else if (playerSelection == 'PAPER' && computerSelection == 'PAPER') {
-                console.log("Tie! Try again");
-            } else if (playerSelection == 'SCISSORS' && computerSelection == 'SCISSORS') {
-                console.log("Tie! Try again");
-            } else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK') {
-                computerScore += 1;
-                console.log("Rock beats scissors! Computer wins round.");
-            } else if (playerSelection == 'ROCK' && computerSelection == 'PAPER') {
-                computerScore += 1;
-                console.log("Paper beats rock. Computer wins round!");
-            } else if (playerSelection == "PAPER" && computerSelection == "SCISSORS") {
-                computerScore += 1;
-                console.log("Scissors beat paper! Computer wins round.");
-            }
-        }
-
-        function winner() {
-            if (playerScore >= 5) {
-                console.log('Player wins the game!');
-            } else if (computerScore >= 5) {
-                console.log("Computer wins the game!");
-            }
-        }
-    </script>
 </body>
 </html>
