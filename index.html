@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let choices = ['rock', 'paper', 'scissors'];
+
+        function computerPlay() {
+            let random = Math.floor(Math.random() * 3);
+            let compChoice = choices[random];
+            return compChoice;
+        }
+
+        function game() {
+            function round(playerSelection, computerSelection) {
+            if (playerSelection == 'rock' && computerSelection == 'scissors') {
+                console.log('Rock beats scissors! Player wins!');
+            } else if (playerSelection == 'paper' && computerSelection == 'rock') {
+                console.log("Paper beats rock! Player wins!");
+            } else if (playerSelection == 'scissors' && computerSelection == 'paper') {
+                console.log('Scissors beat paper! Player wins!');
+            } else {
+                console.log('You lose!');
+            }
+        }
+        }
+
+        const playerSelection = prompt('rock, paper or scissors?');
+        const computerSelection = computerPlay();
+        console.log(round(playerSelection, computerSelection));
+
+    </script>
+</body>
+</html>
